@@ -1,0 +1,24 @@
+{
+  "name": "dropkick",
+  "version": "0.0.0",
+  "description": "Your trusty sidekick for dealing with drag-n-drop events",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DamonOehlman/drops.git"
+  },
+  "keywords": [
+    "drag-n-drop",
+    "drag",
+    "drop"
+  ],
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/drops/issues"
+  },
+  "homepage": "https://github.com/DamonOehlman/drops"
+}
