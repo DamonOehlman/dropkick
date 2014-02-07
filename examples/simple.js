@@ -8,4 +8,5 @@ dropkick(document.body)
     console.log('dropped uri: ' + uri);
   });
 
+// make sure we have some document body to drop onto...
 document.body.style.height = window.innerHeight + 'px';
