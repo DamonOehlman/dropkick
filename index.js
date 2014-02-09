@@ -28,6 +28,8 @@ module.exports = function(target) {
   function handleDragOver(evt) {
     evt.stopPropagation();
     evt.preventDefault();
+    evt.dataTransfer.dropEffect = 'copy';
+
     return false;
   }
 
@@ -35,21 +37,31 @@ module.exports = function(target) {
     var transfer = evt && evt.dataTransfer;
     var files = [].slice.call((transfer && transfer.files) || []);
     var urls = [];
+    var dataTypes = transfer ? [].slice.call(transfer.types) : [];
 
     evt.stopPropagation();
     evt.preventDefault();
 
     // iterate through the transfer types and decide the appropriate action
-    transfer.types.forEach(function(transferType) {
+    dataTypes.forEach(function(transferType) {
       var data = transfer.getData(transferType);
 
       switch (transferType) {
+        // case 'application/x-moz-file': {
+        //   console.log('got file: ', data);
+        // }
+
+        // case 'text/html': {
+        //   console.log('got html: ', data);
+        //   break;
+        // }
+
         case 'text/x-moz-url': {
-          urls.push(transfer.getData(transferType));
+          urls.push(data);
         }
 
         case 'text/uri-list': {
-          urls.push(transfer.getData(transferType));
+          urls.push(data);
         }
       }
     });
